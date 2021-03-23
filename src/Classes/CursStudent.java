@@ -41,7 +41,7 @@ public class CursStudent extends Curs{
     }
 
     public void calcul_medie(){///60% examen final(ultima nota)
-        int s=0;c
+        int s=0;
         int med=0;
         for(int i=0;i<note.size()-1;i++) s=s+note.get(i);
         med=(int)(((s/(note.size()-1))*0.4)+(note.lastElement()*0.6));
