@@ -9,6 +9,38 @@ public class Curs {
     protected String serie;
     protected int credite=1;
 
+    public String getDenumire() {
+        return denumire;
+    }
+
+    public void setDenumire(String denumire) {
+        this.denumire = denumire;
+    }
+
+    public String getProfesor() {
+        return profesor;
+    }
+
+    public void setProfesor(String profesor) {
+        this.profesor = profesor;
+    }
+
+    public String getSerie() {
+        return serie;
+    }
+
+    public void setSerie(String serie) {
+        this.serie = serie;
+    }
+
+    public int getCredite() {
+        return credite;
+    }
+
+    public void setCredite(int credite) {
+        this.credite = credite;
+    }
+
     public Curs(){
         Scanner in = new Scanner(System.in);
         System.out.println("Introduceti denumirea cursului: ");

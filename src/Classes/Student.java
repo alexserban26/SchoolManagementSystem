@@ -9,16 +9,16 @@ public class Student extends Persoana{
     private static final AtomicInteger count = new AtomicInteger(0);
     private String grupa;
     private final int IDstudent;
-    private Vector<CursStudent> situatie_scolara;
+    private Vector<CursStudent> situatie_scolara =new Vector<CursStudent>(0);
     private float medie=0;
 
-    public Student(Curs curs) {
+    public Student() {
         super();
         Scanner in = new Scanner(System.in);
         System.out.println("Introduceti grupa in care se afla studentul "+this.nume+" "+this.prenume+":");
         this.grupa = in.nextLine();
         this.IDstudent=count.incrementAndGet();
-        AddCurs(curs);
+        //AddCurs(curs);
 
     }
 
@@ -48,7 +48,7 @@ public class Student extends Persoana{
     }
 
     public void AddCurs(Curs curs){
-        CursStudent c= new CursStudent(curs);
+        CursStudent c = new CursStudent(curs);
         this.situatie_scolara.add(c);
     }
 
@@ -63,6 +63,7 @@ public class Student extends Persoana{
     }
 
     public void SituatieScolara(){
+        CalcMedie();
 
     }
 
