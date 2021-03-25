@@ -27,4 +27,6 @@ public class Grupa {
     public void setStudenti(ArrayList<Student> studenti) {
         this.studenti = studenti;
     }
+
+
 }

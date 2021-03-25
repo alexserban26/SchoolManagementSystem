@@ -5,7 +5,7 @@ import java.util.Vector;
 
 public class CursStudent extends Curs{
 
-    protected Vector<Integer> note = new Vector<Integer>();
+    protected Vector<Integer> note = new Vector<>();
     private int medie;
 
     public Vector<Integer> getNote() {
@@ -24,7 +24,20 @@ public class CursStudent extends Curs{
         this.medie = medie;
     }
 
-
+    public CursStudent() {
+        super();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduceti notele pentru cursul "+this.denumire+"(0=STOP):");
+        int nota;
+        nota = Integer.parseInt(in.nextLine());
+        while (nota != 0) {
+            if (nota > 10) System.out.println("Eroare! Nota introdusa este prea mare. Introduceti alta nota:");
+            else this.note.add(nota);
+            nota = Integer.parseInt(in.nextLine());
+        }
+        calcul_medie();
+        System.out.println("Media: "+this.getMedie());
+    }
     public CursStudent(Curs curs) {
         this.profesor= curs.getProfesor();
         this.denumire= curs.getDenumire();
@@ -45,7 +58,7 @@ public class CursStudent extends Curs{
 
     public void calcul_medie(){///60% examen final(ultima nota)
         int s=0;
-        int med=0;
+        int med;
         for(int i=0;i<note.size()-1;i++) s=s+note.get(i);
         med=(int)(((s/(note.size()-1))*0.4)+(note.lastElement()*0.6));
         setMedie(med);

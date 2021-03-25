@@ -18,7 +18,7 @@ public class Persoana {
         System.out.println("Introduceti datele de contact:");
         this.contact = in.nextLine();
         System.out.println("Introduceti CNP:");
-        this.cod = in.nextLine();
+        cod = in.nextLine();
 
     }
     public void print(){
@@ -30,7 +30,7 @@ public class Persoana {
     }
 
     public void setCod(String cod) {
-        this.cod = cod;
+        Persoana.cod = cod;
     }
 
     public String getPrenume() {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Deparament {
     protected String nume_dept;
-    protected ArrayList<Profesor> profesori =new ArrayList<Profesor>();
+    protected ArrayList<Profesor> profesori;
 
     public Deparament(String nume_dept, ArrayList<Profesor> profesori) {
         this.nume_dept = nume_dept;

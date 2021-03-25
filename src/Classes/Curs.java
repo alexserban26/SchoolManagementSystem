@@ -52,6 +52,17 @@ public class Curs {
         System.out.println("Introduceti numarul de credite ale cursului:");
         this.credite=Integer.parseInt(in.nextLine());
     }
+    public Curs(String prof){
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduceti denumirea cursului: ");
+        this.denumire=in.nextLine();
+        System.out.println("Introduceti numele profesorului care va preda cursul:");
+        this.profesor=prof;
+        System.out.println("Introduceti seria la care va preda cursul:");
+        this.serie=in.nextLine();
+        System.out.println("Introduceti numarul de credite ale cursului:");
+        this.credite=Integer.parseInt(in.nextLine());
+    }
 
 
     public void print(){
