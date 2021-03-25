@@ -9,6 +9,7 @@ public class Profesor extends Angajat{
     public Profesor(Vector<Curs> cursuri_predate) {
         super();
         this.cursuri_predate = cursuri_predate;
+        Calcul_salariu();
     }
 
     public static int getSalariu_baza() {
@@ -25,5 +26,17 @@ public class Profesor extends Angajat{
 
     public void setCursuri_predate(Vector<Curs> cursuri_predate) {
         this.cursuri_predate = cursuri_predate;
+    }
+    public void Calcul_salariu(){
+        if(getCursuri_predate().size()>3) setSalariu((int)(getSalariu_baza()*getCursuri_predate().size()*0.6));
+        if(getCursuri_predate().size()<=3) setSalariu((int)(getSalariu_baza()*getCursuri_predate().size()*0.75));
+        if(getCursuri_predate().size()>5) setSalariu((int)(getSalariu_baza()*getCursuri_predate().size()*0.5));
+    }
+    public void AddCurs(Curs curs){
+        this.cursuri_predate.add(curs);
+        Calcul_salariu();
+    }
+    public void Avansare(String functie){
+        setFunctie(functie);
     }
 }

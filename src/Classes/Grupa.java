@@ -5,7 +5,7 @@ import java.util.Vector;
 
 public class Grupa {
     private String numar;
-    private ArrayList<Student> studenti= new ArrayList<Student>();
+    private ArrayList<Student> studenti = new ArrayList<Student>();
 
     public Grupa(String numar, ArrayList<Student> studenti) {
         this.numar = numar;

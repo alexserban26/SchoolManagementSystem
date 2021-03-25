@@ -9,9 +9,6 @@ public class Persoana {
     protected String nume;
     protected String contact;
 
-
-
-
     public Persoana() {
         Scanner in = new Scanner(System.in);
         System.out.println("Introduceti numele:");
@@ -59,4 +56,6 @@ public class Persoana {
     public void setContact(String contact) {
         this.contact = contact;
     }
+
+    public void ChangeContact(String contact){setContact(contact);}
 }

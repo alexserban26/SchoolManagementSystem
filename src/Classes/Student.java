@@ -64,6 +64,16 @@ public class Student extends Persoana{
 
     public void SituatieScolara(){
         CalcMedie();
+        print();
+        int contor=0;
+        int total=0;
+        for (CursStudent curs:situatie_scolara){
+            if (curs.getMedie()<5) {System.out.println(curs.denumire+ " Picat "+curs.getMedie()); contor++;}
+            else System.out.println(curs.denumire+ " Promovat "+curs.getMedie());
+            total+=curs.credite;
+        }
+        if (contor>=total/2) System.out.println("Studentul "+nume+" "+prenume+" "+"a picat anul.(nr. credite: "+String.valueOf(total-contor)+")");
+        else System.out.println("Studentul "+nume+" "+prenume+" "+"a promovat anul.");
 
     }
 
