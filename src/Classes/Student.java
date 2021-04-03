@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.Vector;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Student extends Persoana implements Comparable<Student> {
+public class Student extends Persoana implements Comparable<Student>, StudentFunctions {
 
     private static final AtomicInteger count = new AtomicInteger(0);
     private String grupa;
@@ -64,16 +64,19 @@ public class Student extends Persoana implements Comparable<Student> {
         this.medie = medie;
     }
 
+    @Override
     public void AddCurs(Curs curs) {
         CursStudent c = new CursStudent(curs);
         this.situatie_scolara.add(c);
     }
 
+    @Override
     public void AddCurs() {
         CursStudent c = new CursStudent();
         this.situatie_scolara.add(c);
     }
 
+    @Override
     public void CalcMedie() {
         int suma = 0;
         int suma_credite = 0;
@@ -84,6 +87,7 @@ public class Student extends Persoana implements Comparable<Student> {
         setMedie((float) suma / suma_credite);
     }
 
+    @Override
     public void SituatieScolara() {
         CalcMedie();
         print();
