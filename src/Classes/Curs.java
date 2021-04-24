@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Curs {
 
+    protected int IDcurs;
     protected String denumire;
     protected String profesor;
     protected String serie;

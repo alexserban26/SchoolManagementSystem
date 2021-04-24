@@ -9,25 +9,25 @@ public class Student extends Persoana implements Comparable<Student>, StudentFun
 
     private static final AtomicInteger count = new AtomicInteger(0);
     private String grupa;
-    private final int IDstudent;
+    private int IDstudent;
     private Vector<CursStudent> situatie_scolara = new Vector<>(0);
     private float medie = 0;
 
     public Student() {
-        super();
-        Scanner in = new Scanner(System.in);
-        System.out.println("Introduceti grupa in care se afla studentul " + this.nume + " " + this.prenume + ":");
-        this.grupa = in.nextLine();
-        this.IDstudent = count.incrementAndGet();
-        //AddCurs(curs);
-        int ok = 1;
-        System.out.println("Adaugati cursurile la care participa studentul " + nume + " " + prenume);
-        while (ok == 1) {
-            AddCurs();
-            System.out.println("1=CONTINUARE (0=STOP)");
-            ok = Integer.parseInt(in.nextLine());
-        }
-        CalcMedie();
+//        super();
+//        Scanner in = new Scanner(System.in);
+//        System.out.println("Introduceti grupa in care se afla studentul " + this.nume + " " + this.prenume + ":");
+//        this.grupa = in.nextLine();
+//        this.IDstudent = count.incrementAndGet();
+//        //AddCurs(curs);
+//        int ok = 1;
+//        System.out.println("Adaugati cursurile la care participa studentul " + nume + " " + prenume);
+//        while (ok == 1) {
+//            AddCurs();
+//            System.out.println("1=CONTINUARE (0=STOP)");
+//            ok = Integer.parseInt(in.nextLine());
+//        }
+//        CalcMedie();
 
 
     }
@@ -42,6 +42,10 @@ public class Student extends Persoana implements Comparable<Student>, StudentFun
 
     public void setGrupa(String grupa) {
         this.grupa = grupa;
+    }
+
+    public void setIDstudent(int IDstudent) {
+        this.IDstudent = IDstudent;
     }
 
     public int getIDstudent() {
