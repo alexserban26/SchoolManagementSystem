@@ -12,6 +12,7 @@ public class Student extends Persoana implements Comparable<Student>, StudentFun
     private int IDstudent;
     private Vector<CursStudent> situatie_scolara = new Vector<>(0);
     private float medie = 0;
+    public Student(int x) {};
 
     public Student() {
         super();

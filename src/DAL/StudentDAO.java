@@ -42,7 +42,7 @@ public class StudentDAO implements DALinterface {
 
 
         ps.setInt(1, id);
-        Student stud = new Student();
+        Student stud = new Student(0);
         ResultSet rs = ps.executeQuery();
         boolean check = false;
 
@@ -72,7 +72,7 @@ public class StudentDAO implements DALinterface {
         List<Student> ls = new ArrayList();
 
         while (rs.next()) {
-            Student stud = new Student();
+            Student stud = new Student(0);
             stud.setIDstudent(rs.getInt("IDstudent"));
             stud.setNume(rs.getString("nume"));
             stud.setPrenume(rs.getString("prenume"));

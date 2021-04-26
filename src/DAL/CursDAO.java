@@ -45,7 +45,7 @@ public class CursDAO{
         PreparedStatement ps = con.prepareStatement(query);
 
         ps.setInt(1, id);
-        Curs curs = new Curs();
+        Curs curs = new Curs(0);
         ResultSet rs = ps.executeQuery();
         boolean check = false;
 
@@ -76,7 +76,7 @@ public class CursDAO{
         List<Curs> ls = new ArrayList();
 
         while (rs.next()) {
-            Curs curs = new Curs();
+            Curs curs = new Curs(0);
             curs.setIDcurs(rs.getInt("IDcurs"));
             curs.setDenumire(rs.getString("denumire"));
             curs.setProfesor(rs.getInt("IDprofesor"));
