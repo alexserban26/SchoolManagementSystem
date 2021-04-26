@@ -14,10 +14,10 @@ public class Student extends Persoana implements Comparable<Student>, StudentFun
     private float medie = 0;
 
     public Student() {
-//        super();
-//        Scanner in = new Scanner(System.in);
-//        System.out.println("Introduceti grupa in care se afla studentul " + this.nume + " " + this.prenume + ":");
-//        this.grupa = in.nextLine();
+        super();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduceti grupa in care se afla studentul " + this.nume + " " + this.prenume + ":");
+        this.grupa = in.nextLine();
 //        this.IDstudent = count.incrementAndGet();
 //        //AddCurs(curs);
 //        int ok = 1;

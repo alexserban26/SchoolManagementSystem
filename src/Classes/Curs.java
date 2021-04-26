@@ -5,10 +5,20 @@ import java.util.Scanner;
 public class Curs {
 
     protected int IDcurs;
+
+
+
     protected String denumire;
-    protected String profesor;
+    protected int profesor;
     protected String serie;
     protected int credite=1;
+    public void setIDcurs(int IDcurs) {
+        this.IDcurs = IDcurs;
+    }
+
+    public int getIDcurs() {
+        return IDcurs;
+    }
 
     public String getDenumire() {
         return denumire;
@@ -18,11 +28,11 @@ public class Curs {
         this.denumire = denumire;
     }
 
-    public String getProfesor() {
+    public int getProfesor() {
         return profesor;
     }
 
-    public void setProfesor(String profesor) {
+    public void setProfesor(int profesor) {
         this.profesor = profesor;
     }
 
@@ -46,14 +56,14 @@ public class Curs {
         Scanner in = new Scanner(System.in);
         System.out.println("Introduceti denumirea cursului: ");
         this.denumire=in.nextLine();
-        System.out.println("Introduceti numele profesorului care va preda cursul:");
-        this.profesor=in.nextLine();
+        System.out.println("Introduceti ID-ul profesorului care va preda cursul:");
+        this.profesor=in.nextInt();
         System.out.println("Introduceti seria la care va preda cursul:");
         this.serie=in.nextLine();
         System.out.println("Introduceti numarul de credite ale cursului:");
         this.credite=Integer.parseInt(in.nextLine());
     }
-    public Curs(String prof){
+    public Curs(int prof){
         Scanner in = new Scanner(System.in);
         System.out.println("Introduceti denumirea cursului: ");
         this.denumire=in.nextLine();

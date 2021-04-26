@@ -10,11 +10,11 @@ public class Persoana {
     protected String contact;
 
     public Persoana() {
-//        Scanner in = new Scanner(System.in);
-//        System.out.println("Introduceti numele:");
-//        this.nume = in.nextLine();
-//        System.out.println("Introduceti prenumele:");
-//        this.prenume = in.nextLine();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduceti numele:");
+        this.nume = in.nextLine();
+        System.out.println("Introduceti prenumele:");
+        this.prenume = in.nextLine();
 //        System.out.println("Introduceti datele de contact:");
 //        this.contact = in.nextLine();
 //        System.out.println("Introduceti CNP:");

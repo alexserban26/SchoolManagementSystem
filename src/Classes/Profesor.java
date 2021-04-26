@@ -5,7 +5,7 @@ import java.util.Vector;
 
 public class Profesor extends Angajat{
     private static int salariu_baza = 4000;
-
+    private static int IDprofesor;
     private Vector<Curs> cursuri_predate= new Vector<>();
 
     public Profesor() {
@@ -17,6 +17,14 @@ public class Profesor extends Angajat{
             System.out.println("1=CONTINUARE (0=STOP)");
         ok=Integer.parseInt(in.nextLine());}
         Calcul_salariu();
+    }
+
+    public static int getIDprofesor() {
+        return IDprofesor;
+    }
+
+    public static void setIDprofesor(int IDprofesor) {
+        Profesor.IDprofesor = IDprofesor;
     }
 
     public static int getSalariu_baza() {
@@ -40,7 +48,7 @@ public class Profesor extends Angajat{
         if(getCursuri_predate().size()>5) setSalariu((int)(getSalariu_baza()*getCursuri_predate().size()*0.5));
     }
     public void AddCurs(){
-        this.cursuri_predate.add(new Curs(nume+" "+prenume));
+        this.cursuri_predate.add(new Curs(IDprofesor));
         Calcul_salariu();
     }
     public void Avansare(String functie){

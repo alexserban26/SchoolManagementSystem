@@ -7,13 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 import Classes.Student;
 import Util.DatabaseConnection;
-public class StudentDAO implements StudentDALinterface{
+public class StudentDAO implements DALinterface {
     static Connection con = DatabaseConnection.getConnection();
     @Override
     public int add(Student stud)
             throws SQLException
     {
-
         String query = "insert into Student(nume, prenume, grupa) VALUES (?, ?, ?)";
         PreparedStatement ps = con.prepareStatement(query);
         ps.setString(1, stud.getNume());
