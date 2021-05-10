@@ -6,6 +6,7 @@ import java.util.Vector;
 public class CursStudent extends Curs{
 
     protected Vector<Integer> note = new Vector<>();
+    private int IDstudent;
     private int medie;
 
     public Vector<Integer> getNote() {
@@ -24,10 +25,18 @@ public class CursStudent extends Curs{
         this.medie = medie;
     }
 
+    public int getIDstudent() {
+        return IDstudent;
+    }
+
+    public void setIDstudent(int IDstudent) {
+        this.IDstudent = IDstudent;
+    }
+    public CursStudent(int x){};
     public CursStudent() {
-        super();
+        super(0);
         Scanner in = new Scanner(System.in);
-        System.out.println("Introduceti notele pentru cursul "+this.denumire+"(0=STOP):");
+        System.out.println("Introduceti notele pentru cursul "+this.denumire+" studentului "+this.IDstudent+" (0=STOP):");
         int nota;
         nota = Integer.parseInt(in.nextLine());
         while (nota != 0) {

@@ -18,6 +18,7 @@ public class Profesor extends Angajat{
         ok=Integer.parseInt(in.nextLine());}
         Calcul_salariu();
     }
+    public Profesor(int x){}
 
     public static int getIDprofesor() {
         return IDprofesor;

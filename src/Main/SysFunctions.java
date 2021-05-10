@@ -98,4 +98,101 @@ public class SysFunctions {
         int x = in.nextInt();
         cursDAO.delete(x);
     }
+
+    public void AddCursStudent() throws SQLException {
+        CursStudent curs = new CursStudent();
+        CursStudentDAO cursDAO = new CursStudentDAO();
+        cursDAO.add(curs);
+    }
+
+    public void SelectCursStudent() throws SQLException {
+        CursStudentDAO cursDAO = new CursStudentDAO();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduceti ID-ul cursului:");
+        int x = in.nextInt();
+        System.out.println("Introduceti ID-ul studentului:");
+        int y = in.nextInt();
+        CursStudent e = cursDAO.getCurs(x,y);
+        System.out.println(e.getIDcurs() + " "
+                + e.getIDstudent() + " " + e.getMedie());
+    }
+
+    public void SelectAllCursStudent() throws SQLException {
+        CursStudentDAO cursDAO = new CursStudentDAO();
+        List<CursStudent> ls = cursDAO.getCurss();
+        for (CursStudent e : ls) {
+            System.out.println(e.getIDcurs() + " "
+                    + e.getIDstudent() + " " + e.getMedie());
+        }
+    }
+
+    public void UpdateCursStudent() throws SQLException {
+        CursStudentDAO cursDAO = new CursStudentDAO();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduceti ID-ul cursului:");
+        int x = in.nextInt();
+        System.out.println("Introduceti ID-ul studentului:");
+        int y = in.nextInt();
+        System.out.println("Introduceti media la curs a studentului:");
+        int z = in.nextInt();
+        CursStudent curs = CursStudentDAO.getCurs(x,y);
+        curs.setMedie(z);
+        cursDAO.update(curs);
+    }
+
+    public void DeleteCursStudent() throws SQLException {
+        CursStudentDAO cursDAO = new CursStudentDAO();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduceti ID-ul cursului:");
+        int x = in.nextInt();
+        System.out.println("Introduceti ID-ul studentului:");
+        int y = in.nextInt();
+        cursDAO.delete(x,y);
+    }
+
+    public void AddProfesor() throws SQLException {
+        Profesor stud = new Profesor();
+        ProfesorDAO studDao = new ProfesorDAO();
+        studDao.add(stud);
+    }
+
+    public void SelectProfesor() throws SQLException {
+        ProfesorDAO studDao = new ProfesorDAO();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduceti ID-ul Profesorului:");
+        int x = in.nextInt();
+        Profesor e = studDao.getProfesor(x);
+        System.out.println(e.getIDprofesor() + " "
+                + e.getNume() + " " + e.getPrenume());
+    }
+
+    public void SelectAllProfesors() throws SQLException {
+        ProfesorDAO studDao = new ProfesorDAO();
+        List<Profesor> ls = studDao.getProfesors();
+        for (Profesor allprof : ls) {
+            System.out.println(allprof.getIDprofesor() + " " + allprof.getNume() + " " + allprof.getPrenume());
+        }
+    }
+
+    public void UpdateProfesor() throws SQLException {
+        ProfesorDAO studDao = new ProfesorDAO();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduceti ID-ul Profesorului:");
+        int x = in.nextInt();
+        Profesor Profesor = studDao.getProfesor(x);
+        System.out.println("Introduceti prenumele cu care doriti sa schimbati:");
+        Profesor.setPrenume(in.nextLine());
+        studDao.update(Profesor);
+    }
+
+    public void DeleteProfesor() throws SQLException {
+        ProfesorDAO studDao = new ProfesorDAO();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduceti ID-ul Profesorului:");
+        int x = in.nextInt();
+        studDao.delete(x);
+    }
+
+
+
 }
